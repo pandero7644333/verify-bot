@@ -15,9 +15,9 @@ const client = new Client({
 });
 
 // 🔧 WKLEJ SWOJE ID
-const verifiedRoleId = "ID_ROLI_VERIFIED";
-const unverifiedRoleId = "ID_ROLI_UNVERIFIED";
-const panelChannelId = "ID_KANALU_PANELU";
+const verifiedRoleId = "1467678910807281869";
+const unverifiedRoleId = "1467678867941757132";
+const panelChannelId = "1467677811887050822";
 
 client.once('ready', async () => {
   console.log(`Bot online jako ${client.user.tag}`);
