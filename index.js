@@ -32,7 +32,7 @@ client.once('ready', async () => {
   const row = new ActionRowBuilder().addComponents(button);
 
   channel.send({
-    content: 'Kliknij przycisk, aby się zweryfikować!',
+    content: 'Click the button to verify!',
     components: [row]
   });
 });
@@ -44,11 +44,11 @@ client.on(Events.InteractionCreate, async interaction => {
 
     const modal = new ModalBuilder()
       .setCustomId('verify_modal')
-      .setTitle('Weryfikacja Minecraft');
+      .setTitle('Verification');
 
     const mcNickInput = new TextInputBuilder()
       .setCustomId('mc_nick')
-      .setLabel('Twój nick w Minecraft')
+      .setLabel('Enter your Minecraft username')
       .setStyle(TextInputStyle.Short)
       .setRequired(true);
 
@@ -74,14 +74,14 @@ client.on(Events.InteractionCreate, async interaction => {
       }
 
       await interaction.reply({
-        content: `✅ Zweryfikowano jako **${mcNick}**`,
+        content: `✅ You have been verified as **${mcNick}**`,
         ephemeral: true
       });
 
     } catch (err) {
       console.log(err);
       await interaction.reply({
-        content: "❌ Bot nie ma permisji (role za wysoko).",
+        content: "❌ I cannot change your nickname or roles.",
         ephemeral: true
       });
     }
